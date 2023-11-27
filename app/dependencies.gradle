@@ -1,0 +1,27 @@
+ext {
+    // *** Versions ***
+    // Tools
+    kotlin_version = "1.7.20"
+
+    // Others
+    retrofit_version = "2.9.0"
+
+    // Jetpack Compose
+    composeUI_version = "1.3.3"
+    composeMaterial_version = "1.5.4"
+    composeUITooling_version = "1.0.1"
+    composeLifecycle_version = "2.3.1"
+    compose_version = "1.3.1"
+
+
+    // *** Libraries ***
+    // Tools Dependencies
+    tools_kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlin_version}"
+
+    // Jetpack Compose
+    composeUI = "androidx.compose.ui:ui:${composeUI_version}"
+    composeMaterial = "androidx.compose.material:material:${composeMaterial_version}"
+    composeUITooling = "androidx.compose.ui:ui-tooling-preview:${composeUITooling_version}"
+    composeLifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:${composeLifecycle_version}"
+    compose = "androidx.activity:activity-compose:${compose_version}"
+}
