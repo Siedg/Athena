@@ -1,6 +1,5 @@
 package br.com.athena.components
 
-import android.content.Intent.ShortcutIconResource
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
@@ -15,7 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.Dp
-import br.com.athena.components.texts.AthenaBody_Bold
+import br.com.athena.components.texts.AthenaText_16Bold
 import br.com.athena.theme.AppTheme
 import br.com.athena.theme.Dimensions.dimen_12dp
 import br.com.athena.theme.Dimensions.dimen_22dp
@@ -67,7 +66,7 @@ fun AthenaTopBar(
                             contentDescription = null
                         )
                     }
-                    AthenaBody_Bold(
+                    AthenaText_16Bold(
                         modifier = Modifier.padding(
                             start = if(mainIconResource != null) dimen_22dp else dimen_8dp
                         ),

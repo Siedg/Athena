@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.TextUnit
 import br.com.athena.theme.AppTheme
 
 @Composable
-fun AthenaBody_Bold(
+fun AthenaText_16Bold(
     text: String,
     modifier: Modifier = Modifier,
     color: Color = AppTheme.colors.colorGray,
@@ -32,7 +32,202 @@ fun AthenaBody_Bold(
     softWrap: Boolean = true,
     maxLines: Int = Int.MAX_VALUE,
     onTextLayout: (TextLayoutResult) -> Unit = {},
-    style: TextStyle = AppTheme.typography.body_bold
+    style: TextStyle = AppTheme.typography.text_16_bold
+) {
+    Text(
+        text = text,
+        modifier = modifier,
+        color = color,
+        fontSize = fontSize,
+        fontStyle = fontStyle,
+        fontWeight = fontWeight,
+        fontFamily = fontFamily,
+        letterSpacing = letterSpacing,
+        textDecoration = textDecoration,
+        textAlign = textAlign,
+        lineHeight = lineHeight,
+        overflow = overflow,
+        softWrap = softWrap,
+        maxLines = maxLines,
+        onTextLayout = onTextLayout,
+        style = style
+    )
+}
+
+@Composable
+fun AthenaText_16Normal(
+    text: String,
+    modifier: Modifier = Modifier,
+    color: Color = AppTheme.colors.colorGray,
+    fontSize: TextUnit = TextUnit.Unspecified,
+    fontStyle: FontStyle? = null,
+    fontWeight: FontWeight? = null,
+    fontFamily: FontFamily? = null,
+    letterSpacing: TextUnit = TextUnit.Unspecified,
+    textDecoration: TextDecoration? = null,
+    textAlign: TextAlign? = null,
+    lineHeight: TextUnit = TextUnit.Unspecified,
+    overflow: TextOverflow = TextOverflow.Clip,
+    softWrap: Boolean = true,
+    maxLines: Int = Int.MAX_VALUE,
+    onTextLayout: (TextLayoutResult) -> Unit = {},
+    style: TextStyle = AppTheme.typography.text_16_normal
+) {
+    Text(
+        text = text,
+        modifier = modifier,
+        color = color,
+        fontSize = fontSize,
+        fontStyle = fontStyle,
+        fontWeight = fontWeight,
+        fontFamily = fontFamily,
+        letterSpacing = letterSpacing,
+        textDecoration = textDecoration,
+        textAlign = textAlign,
+        lineHeight = lineHeight,
+        overflow = overflow,
+        softWrap = softWrap,
+        maxLines = maxLines,
+        onTextLayout = onTextLayout,
+        style = style
+    )
+}
+
+@Composable
+fun AthenaText_18Normal(
+    text: String,
+    modifier: Modifier = Modifier,
+    color: Color = AppTheme.colors.colorGray,
+    fontSize: TextUnit = TextUnit.Unspecified,
+    fontStyle: FontStyle? = null,
+    fontWeight: FontWeight? = null,
+    fontFamily: FontFamily? = null,
+    letterSpacing: TextUnit = TextUnit.Unspecified,
+    textDecoration: TextDecoration? = null,
+    textAlign: TextAlign? = null,
+    lineHeight: TextUnit = TextUnit.Unspecified,
+    overflow: TextOverflow = TextOverflow.Clip,
+    softWrap: Boolean = true,
+    maxLines: Int = Int.MAX_VALUE,
+    onTextLayout: (TextLayoutResult) -> Unit = {},
+    style: TextStyle = AppTheme.typography.text_18_normal
+) {
+    Text(
+        text = text,
+        modifier = modifier,
+        color = color,
+        fontSize = fontSize,
+        fontStyle = fontStyle,
+        fontWeight = fontWeight,
+        fontFamily = fontFamily,
+        letterSpacing = letterSpacing,
+        textDecoration = textDecoration,
+        textAlign = textAlign,
+        lineHeight = lineHeight,
+        overflow = overflow,
+        softWrap = softWrap,
+        maxLines = maxLines,
+        onTextLayout = onTextLayout,
+        style = style
+    )
+}
+
+@Composable
+fun AthenaText_18Bold(
+    text: String,
+    modifier: Modifier = Modifier,
+    color: Color = AppTheme.colors.colorGray,
+    fontSize: TextUnit = TextUnit.Unspecified,
+    fontStyle: FontStyle? = null,
+    fontWeight: FontWeight? = null,
+    fontFamily: FontFamily? = null,
+    letterSpacing: TextUnit = TextUnit.Unspecified,
+    textDecoration: TextDecoration? = null,
+    textAlign: TextAlign? = null,
+    lineHeight: TextUnit = TextUnit.Unspecified,
+    overflow: TextOverflow = TextOverflow.Clip,
+    softWrap: Boolean = true,
+    maxLines: Int = Int.MAX_VALUE,
+    onTextLayout: (TextLayoutResult) -> Unit = {},
+    style: TextStyle = AppTheme.typography.text_16_bold
+) {
+    Text(
+        text = text,
+        modifier = modifier,
+        color = color,
+        fontSize = fontSize,
+        fontStyle = fontStyle,
+        fontWeight = fontWeight,
+        fontFamily = fontFamily,
+        letterSpacing = letterSpacing,
+        textDecoration = textDecoration,
+        textAlign = textAlign,
+        lineHeight = lineHeight,
+        overflow = overflow,
+        softWrap = softWrap,
+        maxLines = maxLines,
+        onTextLayout = onTextLayout,
+        style = style
+    )
+}
+
+@Composable
+fun AthenaText_20Normal(
+    text: String,
+    modifier: Modifier = Modifier,
+    color: Color = AppTheme.colors.colorGray,
+    fontSize: TextUnit = TextUnit.Unspecified,
+    fontStyle: FontStyle? = null,
+    fontWeight: FontWeight? = null,
+    fontFamily: FontFamily? = null,
+    letterSpacing: TextUnit = TextUnit.Unspecified,
+    textDecoration: TextDecoration? = null,
+    textAlign: TextAlign? = null,
+    lineHeight: TextUnit = TextUnit.Unspecified,
+    overflow: TextOverflow = TextOverflow.Clip,
+    softWrap: Boolean = true,
+    maxLines: Int = Int.MAX_VALUE,
+    onTextLayout: (TextLayoutResult) -> Unit = {},
+    style: TextStyle = AppTheme.typography.text_20_normal
+) {
+    Text(
+        text = text,
+        modifier = modifier,
+        color = color,
+        fontSize = fontSize,
+        fontStyle = fontStyle,
+        fontWeight = fontWeight,
+        fontFamily = fontFamily,
+        letterSpacing = letterSpacing,
+        textDecoration = textDecoration,
+        textAlign = textAlign,
+        lineHeight = lineHeight,
+        overflow = overflow,
+        softWrap = softWrap,
+        maxLines = maxLines,
+        onTextLayout = onTextLayout,
+        style = style
+    )
+}
+
+@Composable
+fun AthenaText_20Bold(
+    text: String,
+    modifier: Modifier = Modifier,
+    color: Color = AppTheme.colors.colorGray,
+    fontSize: TextUnit = TextUnit.Unspecified,
+    fontStyle: FontStyle? = null,
+    fontWeight: FontWeight? = null,
+    fontFamily: FontFamily? = null,
+    letterSpacing: TextUnit = TextUnit.Unspecified,
+    textDecoration: TextDecoration? = null,
+    textAlign: TextAlign? = null,
+    lineHeight: TextUnit = TextUnit.Unspecified,
+    overflow: TextOverflow = TextOverflow.Clip,
+    softWrap: Boolean = true,
+    maxLines: Int = Int.MAX_VALUE,
+    onTextLayout: (TextLayoutResult) -> Unit = {},
+    style: TextStyle = AppTheme.typography.text_20_bold
 ) {
     Text(
         text = text,
