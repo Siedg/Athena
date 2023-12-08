@@ -3,7 +3,9 @@ package br.com.athena.theme
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
+import br.com.athena.R
 
 @Immutable
 data class AppTypography (
@@ -30,5 +32,5 @@ val LocalAthenaTypography = staticCompositionLocalOf {
 }
 
 val fonts = FontFamily(
-    //Font()
+    Font(R.font.athena)
 )

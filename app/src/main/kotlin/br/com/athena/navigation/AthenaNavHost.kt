@@ -14,6 +14,5 @@ fun AthenaNavHost() {
         composable(route = HOME) {
             HomeScreen(navController = navController)
         }
-
     }
 }
