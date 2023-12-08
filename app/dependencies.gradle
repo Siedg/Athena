@@ -12,6 +12,7 @@ ext {
     composeUITooling_version = "1.0.1"
     composeLifecycle_version = "2.3.1"
     compose_version = "1.3.1"
+    nav_version = "2.7.5"
 
 
     // *** Libraries ***
@@ -24,4 +25,5 @@ ext {
     composeUITooling = "androidx.compose.ui:ui-tooling-preview:${composeUITooling_version}"
     composeLifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:${composeLifecycle_version}"
     compose = "androidx.activity:activity-compose:${compose_version}"
+    navigation = "androidx.navigation:navigation-compose:${nav_version}"
 }

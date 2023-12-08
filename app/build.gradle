@@ -55,4 +55,5 @@ dependencies {
     implementation composeMaterial
     implementation composeUITooling
     implementation composeLifecycle
+    implementation navigation
 }
