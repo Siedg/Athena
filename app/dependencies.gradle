@@ -2,6 +2,7 @@ ext {
     // *** Versions ***
     // Tools
     kotlin_version = "1.7.20"
+    kotlin_coroutines_version = "1.7.3"
 
     // Others
     retrofit_version = "2.9.0"
@@ -26,4 +27,5 @@ ext {
     composeLifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:${composeLifecycle_version}"
     compose = "androidx.activity:activity-compose:${compose_version}"
     navigation = "androidx.navigation:navigation-compose:${nav_version}"
+    kotlinCoroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${kotlin_coroutines_version}"
 }
