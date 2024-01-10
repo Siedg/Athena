@@ -12,6 +12,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.colorResource
 import br.com.athena.components.texts.AthenaText_16Bold
 import br.com.athena.components.texts.AthenaText_16Normal
 import br.com.athena.theme.Dimensions.dimen_16dp
@@ -58,7 +59,8 @@ private fun AthenaDrawerBody(
             ) {
                 Icon(
                     imageVector = item.icon,
-                    contentDescription = item.contentDescription
+                    contentDescription = item.contentDescription,
+                    tint = colorResource(id = item.iconColor)
                 )
                 Spacer(modifier = Modifier.width(dimen_16dp))
                 AthenaText_16Normal(

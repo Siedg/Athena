@@ -19,7 +19,9 @@ fun AppTheme(
 ) {
     val appColors = AppColors(
         colorPrimary = colorResource(id = R.color.colorPrimary),
+        colorPrimaryVariant = colorResource(id = R.color.colorPrimaryVariant),
         colorSecondary = colorResource(id = R.color.colorSecondary),
+        colorSecondaryVariant = colorResource(id = R.color.colorSecondaryVariant),
         colorWhite = Color.White,
         colorGray = Color(0xFF888888),
         colorBlack = Color.Black

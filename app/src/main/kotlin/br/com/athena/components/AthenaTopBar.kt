@@ -22,8 +22,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.Dp
+import br.com.athena.R
 import br.com.athena.components.texts.AthenaText_16Bold
 import br.com.athena.theme.AppTheme
 import br.com.athena.theme.Dimensions.dimen_12dp
@@ -45,7 +47,7 @@ fun AthenaTopBar(
     secondIconResource: Int? = null,
     secondIconColor: Color? = null,
     secondIconOnPressClick: () -> Unit = {},
-    backgroundColor: Color? = null,
+    backgroundColor: Color? = AppTheme.colors.colorSecondary,
     elevation: Dp = AppBarDefaults.TopAppBarElevation,
     hasNavigationDrawer: Boolean? = false,
     navigationDrawerIcon: ImageVector = Icons.Default.Menu,
@@ -60,7 +62,8 @@ fun AthenaTopBar(
                 IconButton(onClick = onNavigationIconClick) {
                     Icon(
                         imageVector = navigationDrawerIcon,
-                        contentDescription = "Toggle drawer"
+                        contentDescription = "Toggle drawer",
+                        tint = colorResource(id = R.color.colorPrimary)
                     )
                 }
             }
