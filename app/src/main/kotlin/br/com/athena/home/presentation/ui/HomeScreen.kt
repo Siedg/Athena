@@ -28,6 +28,7 @@ fun HomeScreen(
         scaffoldState = scaffoldState,
         topBar = {
             AthenaTopBar(
+                title = "AthenaApp",
                 hasNavigationDrawer = true,
                 onNavigationIconClick = {
                     scope.launch {

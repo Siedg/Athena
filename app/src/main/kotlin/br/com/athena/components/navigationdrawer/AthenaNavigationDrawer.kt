@@ -1,22 +1,35 @@
 package br.com.athena.components.navigationdrawer
 
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.painterResource
+import br.com.athena.R
 import br.com.athena.components.texts.AthenaText_16Bold
 import br.com.athena.components.texts.AthenaText_16Normal
+import br.com.athena.theme.AppTheme
 import br.com.athena.theme.Dimensions.dimen_16dp
+import br.com.athena.theme.Dimensions.dimen_24dp
+import br.com.athena.theme.Dimensions.dimen_2dp
 import br.com.athena.theme.Dimensions.dimen_64dp
+import br.com.athena.theme.Dimensions.dimen_8dp
 
 @Composable
 fun AthenaNavigationDrawer(
@@ -35,9 +48,34 @@ private fun AthenaDrawerHeader() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = dimen_64dp)
+            .background(color = AppTheme.colors.colorSecondary)
     ) {
-        AthenaText_16Bold(text = "Header")
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(dimen_16dp)
+        ) {
+            Image(
+                modifier = Modifier
+                    .size(dimen_64dp)
+                    .clip(CircleShape)
+                    .border(
+                        width = dimen_2dp,
+                        color = AppTheme.colors.colorPrimary,
+                        shape = CircleShape
+                    ),
+                painter = painterResource(id = R.drawable.male_placeholder_image),
+                contentDescription = null
+            )
+            AthenaText_16Bold(
+                modifier = Modifier.padding(top = dimen_24dp),
+                text = "Lorem ipsum dolor"
+            )
+            AthenaText_16Bold(
+                modifier = Modifier.padding(top = dimen_8dp),
+                text = "lorem.ipsum@dolor.com"
+            )
+        }
     }
 }
 

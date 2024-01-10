@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material.AppBarDefaults
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
@@ -37,7 +38,7 @@ import br.com.athena.theme.Dimensions.dimen_8dp
 fun AthenaTopBar(
     modifier: Modifier = Modifier,
     title: String? = null,
-    titleColor: Color = AppTheme.colors.colorGray,
+    titleColor: Color = MaterialTheme.colors.onPrimary,
     mainIconResource: Int? = null,
     mainIconColor: Color? = null,
     mainIconOnPressClick: () -> Unit = {},
@@ -63,7 +64,7 @@ fun AthenaTopBar(
                     Icon(
                         imageVector = navigationDrawerIcon,
                         contentDescription = "Toggle drawer",
-                        tint = colorResource(id = R.color.colorPrimary)
+                        tint = colorResource(id = R.color.colorPrimary),
                     )
                 }
             }

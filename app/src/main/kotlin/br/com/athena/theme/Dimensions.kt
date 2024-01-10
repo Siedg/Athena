@@ -5,6 +5,7 @@ import androidx.compose.ui.unit.sp
 
 object Dimensions {
     val dimen_1dp = 1.dp
+    val dimen_2dp = 2.dp
     val dimen_8dp = 8.dp
     val dimen_12dp = 12.dp
     val dimen_16dp = 16.dp
@@ -12,8 +13,10 @@ object Dimensions {
     val dimen_20dp = 20.dp
     val dimen_22dp = 22.dp
     val dimen_24dp = 24.dp
+    val dimen_32dp = 32.dp
     val dimen_48dp = 48.dp
     val dimen_64dp = 64.dp
+    val dimen_72dp = 72.dp
     val dimen_96dp = 96.dp
 
     val dimen_8sp = 8.sp
