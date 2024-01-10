@@ -4,12 +4,21 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
 import androidx.compose.material.ScaffoldState
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Email
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.outlined.Email
+import androidx.compose.material.icons.outlined.Home
+import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
+import br.com.athena.components.AthenaBottomBar
 import br.com.athena.components.AthenaTopBar
+import br.com.athena.components.BottomNavigationItem
 import br.com.athena.components.navigationdrawer.AthenaNavigationDrawer
 import br.com.athena.home.presentation.viewmodel.HomeViewModel
 import br.com.athena.navigation.HOME
@@ -23,6 +32,28 @@ fun HomeScreen(
     val viewModel: HomeViewModel = koinViewModel()
     val scaffoldState: ScaffoldState = rememberScaffoldState()
     val scope = rememberCoroutineScope()
+
+    val items = listOf(
+        BottomNavigationItem(
+            title = "Home",
+            selectedIcon = Icons.Filled.Home,
+            unselectedIcon = Icons.Outlined.Home,
+            hasNews = false
+        ),
+        BottomNavigationItem(
+            title = "Chat",
+            selectedIcon = Icons.Filled.Email,
+            unselectedIcon = Icons.Outlined.Email,
+            hasNews = false,
+            badgeCount = 12
+        ),
+        BottomNavigationItem(
+            title = "Settings",
+            selectedIcon = Icons.Filled.Settings,
+            unselectedIcon = Icons.Outlined.Settings,
+            hasNews = true
+        )
+    )
 
     Scaffold (
         scaffoldState = scaffoldState,
@@ -46,6 +77,9 @@ fun HomeScreen(
                     }
                 }
             )
+        },
+        bottomBar = {
+            AthenaBottomBar(items)
         },
         content = {
             Box(modifier = Modifier.padding(it)) {
