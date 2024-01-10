@@ -11,13 +11,17 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.AppBarDefaults
 import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
 import androidx.compose.material.TopAppBar
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.Dp
 import br.com.athena.components.texts.AthenaText_16Bold
@@ -43,12 +47,24 @@ fun AthenaTopBar(
     secondIconOnPressClick: () -> Unit = {},
     backgroundColor: Color? = null,
     elevation: Dp = AppBarDefaults.TopAppBarElevation,
-    hasNavigationDrawer: Boolean? = false
+    hasNavigationDrawer: Boolean? = false,
+    navigationDrawerIcon: ImageVector = Icons.Default.Menu,
+    onNavigationIconClick: () -> Unit = {}
 ) {
     TopAppBar(
         backgroundColor = backgroundColor ?: Color.White,
         elevation = elevation,
         modifier = modifier,
+        navigationIcon = {
+            if (hasNavigationDrawer == true) {
+                IconButton(onClick = onNavigationIconClick) {
+                    Icon(
+                        imageVector = navigationDrawerIcon,
+                        contentDescription = "Toggle drawer"
+                    )
+                }
+            }
+        },
         title = {
             Row(
                 verticalAlignment = Alignment.CenterVertically,

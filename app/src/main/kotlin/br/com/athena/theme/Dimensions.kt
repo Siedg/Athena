@@ -13,6 +13,7 @@ object Dimensions {
     val dimen_22dp = 22.dp
     val dimen_24dp = 24.dp
     val dimen_48dp = 48.dp
+    val dimen_64dp = 64.dp
     val dimen_96dp = 96.dp
 
     val dimen_8sp = 8.sp

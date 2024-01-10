@@ -1,75 +1,77 @@
 package br.com.athena.components.navigationdrawer
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.material.DrawerState
-import androidx.compose.material.ModalDrawer
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.res.painterResource
-import br.com.athena.R
+import br.com.athena.components.texts.AthenaText_16Bold
 import br.com.athena.components.texts.AthenaText_16Normal
-import br.com.athena.navigation.HOME
-import br.com.athena.theme.AppTheme
 import br.com.athena.theme.Dimensions.dimen_16dp
-import br.com.athena.theme.Dimensions.dimen_1dp
-import br.com.athena.theme.Dimensions.dimen_24dp
-import br.com.athena.theme.Dimensions.dimen_96dp
+import br.com.athena.theme.Dimensions.dimen_64dp
 
 @Composable
 fun AthenaNavigationDrawer(
-    icon: Int,
-    text: String,
-    drawerState: DrawerState,
-    gesturesEnabled: Boolean = drawerState.isOpen,
-    modifier: Modifier = Modifier,
+    items: List<AthenaNavigationDrawerItem> = defaultScreens,
+    onItemClick: (AthenaNavigationDrawerItem) -> Unit
 ) {
-    ModalDrawer(
-        drawerState = drawerState,
-        gesturesEnabled = gesturesEnabled,
-        drawerElevation = dimen_1dp,
-        drawerContent = {
-            Column(
+    AthenaDrawerHeader()
+    AthenaDrawerBody(
+        items = items,
+        onItemClick = onItemClick
+    )
+}
+
+@Composable
+private fun AthenaDrawerHeader() {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = dimen_64dp)
+    ) {
+        AthenaText_16Bold(text = "Header")
+    }
+}
+
+@Composable
+private fun AthenaDrawerBody(
+    items: List<AthenaNavigationDrawerItem>,
+    modifier: Modifier = Modifier,
+    onItemClick: (AthenaNavigationDrawerItem) -> Unit
+) {
+    LazyColumn(modifier = modifier) {
+        items(items) { item ->
+            Row(
                 modifier = Modifier
-                    .background(color = AppTheme.colors.colorWhite)
-                    .fillMaxSize()
-                    .padding(start = dimen_16dp, top = dimen_16dp)
+                    .fillMaxWidth()
+                    .padding(dimen_16dp)
+                    .clickable {
+                        onItemClick(item)
+                    }
             ) {
-                Image(
-                    modifier = Modifier.size(dimen_96dp),
-                    painter = painterResource(R.drawable.ic_launcher_foreground),
-                    contentDescription = null,
-                    colorFilter = ColorFilter.tint(color = AppTheme.colors.colorPrimary)
+                Icon(
+                    imageVector = item.icon,
+                    contentDescription = item.contentDescription
                 )
-                screens.forEach { screen ->
-                    Spacer(modifier = Modifier.height(dimen_24dp))
-                    AthenaText_16Normal(
-                        modifier = Modifier.clickable {  },
-                        text = screen.title,
-                    )
-                }
+                Spacer(modifier = Modifier.width(dimen_16dp))
+                AthenaText_16Normal(
+                    modifier = Modifier.weight(1f),
+                    text = item.title
+                )
             }
         }
-    ) {
-
     }
-
 }
 
-sealed class DrawerScreens(val title: String, val route: String) {
-    object Home: DrawerScreens("Home", HOME)
-    object PlaceHolder: DrawerScreens("PlaceHolder", HOME)
-}
-
-private val screens = listOf(
-    DrawerScreens.Home,
-    DrawerScreens.PlaceHolder
+private val defaultScreens = listOf(
+    AthenaNavigationDrawerItem.Home,
+    AthenaNavigationDrawerItem.Settings,
+    AthenaNavigationDrawerItem.Help,
 )
