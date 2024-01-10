@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "446890022231",
+    "project_id": "athena-9b18b",
+    "storage_bucket": "athena-9b18b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:446890022231:android:65ab7fba8e5a9e634ada12",
+        "android_client_info": {
+          "package_name": "br.com.athena"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZxXNfAAj9hL1yxZzb1IoU1WWqt2lHDpY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

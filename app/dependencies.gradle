@@ -15,11 +15,19 @@ ext {
     compose_version = "1.5.4"
     nav_version = "2.6.0"
 
-
     // Koin
     koin_version = "3.3.3"
     koinAndroid_version = "3.3.3"
     composeKoin_version = "3.4.2"
+
+    // Firebase
+    firebaseRemoteConfig_version = "32.7.0"
+    firebaseCrashlytics_version = "32.7.0"
+    firebaseMessaging_version = "32.7.0"
+    firebaseDatabase_version = "32.7.0"
+    firebasePerformance_version = "32.7.0"
+    firebaseDynamicLink_version = "32.7.0"
+    firebaseBoM_version = "32.7.0"
 
 
     // *** Libraries ***
@@ -35,9 +43,17 @@ ext {
     navigation = "androidx.navigation:navigation-compose:${nav_version}"
     kotlinCoroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${kotlin_coroutines_version}"
 
-
     // Koin
     koin = "io.insert-koin:koin-android:${koin_version}"
     koinCore = "io.insert-koin:koin-core:${koin_version}"
     composeKoin = "io.insert-koin:koin-androidx-compose:${composeKoin_version}"
+
+    // Firebase
+    firebaseBoM = "com.google.firebase:firebase-bom${firebaseBoM_version}"
+    firebaseRemoteConfig = "com.google.firebase:firebase-config${firebaseRemoteConfig_version}"
+    firebaseCrashlytics = "com.google.firebase:firebase-crashlytics${firebaseCrashlytics_version}"
+    firebaseMessaging = "com.google.firebase:firebase-messaging-ktx${firebaseMessaging_version}"
+    firebaseDatabase = "com.google.firebase:firebase-database${firebaseDatabase_version}"
+    firebasePerformance = "com.google.firebase:firebase-perf${firebasePerformance_version}"
+    firebaseDynamicLink = "com.google.firebase:firebase-dynamic-links-ktx${firebaseDynamicLink_version}"
 }

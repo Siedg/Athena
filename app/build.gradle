@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
 }
 
 apply from: 'dependencies.gradle'
@@ -79,4 +80,5 @@ dependencies {
     implementation koin
     implementation koinCore
     implementation composeKoin
+    implementation firebaseBoM
 }
