@@ -3,6 +3,7 @@ ext {
     // Tools
     kotlin_version = "1.7.20"
     kotlin_coroutines_version = "1.7.3"
+    playServicesAuthentication_version = "20.4.1"
 
     // Others
     retrofit_version = "2.9.0"
@@ -28,11 +29,13 @@ ext {
     firebasePerformance_version = "32.7.0"
     firebaseDynamicLink_version = "32.7.0"
     firebaseBoM_version = "32.7.0"
+    firebaseAuthentication_version = "32.7.0"
 
 
     // *** Libraries ***
     // Tools Dependencies
     tools_kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlin_version}"
+    playServicesAuthentication = "com.google.android.gms:play-services-auth:${playServicesAuthentication_version}"
 
     // Jetpack Compose
     composeUI = "androidx.compose.ui:ui:${composeUI_version}"
@@ -56,4 +59,5 @@ ext {
     firebaseDatabase = "com.google.firebase:firebase-database${firebaseDatabase_version}"
     firebasePerformance = "com.google.firebase:firebase-perf${firebasePerformance_version}"
     firebaseDynamicLink = "com.google.firebase:firebase-dynamic-links-ktx${firebaseDynamicLink_version}"
+    firebaseAuthentication = "com.google.firebase:firebase-auth-ktx${firebaseAuthentication_version}"
 }
