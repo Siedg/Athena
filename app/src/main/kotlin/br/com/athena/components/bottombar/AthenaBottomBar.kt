@@ -1,4 +1,4 @@
-package br.com.athena.components
+package br.com.athena.components.bottombar
 
 import androidx.compose.material.Badge
 import androidx.compose.material.BadgedBox
@@ -11,7 +11,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.graphics.vector.ImageVector
 import br.com.athena.theme.AppTheme
 
 @Composable
@@ -56,11 +55,3 @@ fun AthenaBottomBar(
         }
     }
 }
-
-data class BottomNavigationItem(
-    val title: String,
-    val selectedIcon: ImageVector,
-    val unselectedIcon: ImageVector,
-    val hasNews: Boolean,
-    val badgeCount: Int? = null
-)

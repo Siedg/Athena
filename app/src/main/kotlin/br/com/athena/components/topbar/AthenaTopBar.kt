@@ -1,4 +1,4 @@
-package br.com.athena.components
+package br.com.athena.components.topbar
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource

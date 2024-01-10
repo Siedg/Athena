@@ -16,9 +16,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
-import br.com.athena.components.AthenaBottomBar
-import br.com.athena.components.AthenaTopBar
-import br.com.athena.components.BottomNavigationItem
+import br.com.athena.components.bottombar.AthenaBottomBar
+import br.com.athena.components.topbar.AthenaTopBar
+import br.com.athena.components.bottombar.BottomNavigationItem
 import br.com.athena.components.navigationdrawer.AthenaNavigationDrawer
 import br.com.athena.home.presentation.viewmodel.HomeViewModel
 import br.com.athena.navigation.HOME
