@@ -16,6 +16,12 @@ ext {
     nav_version = "2.6.0"
 
 
+    // Koin
+    koin_version = "3.3.3"
+    koinAndroid_version = "3.3.3"
+    composeKoin_version = "3.4.2"
+
+
     // *** Libraries ***
     // Tools Dependencies
     tools_kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlin_version}"
@@ -28,4 +34,10 @@ ext {
     compose = "androidx.activity:activity-compose:${compose_version}"
     navigation = "androidx.navigation:navigation-compose:${nav_version}"
     kotlinCoroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${kotlin_coroutines_version}"
+
+
+    // Koin
+    koin = "io.insert-koin:koin-android:${koin_version}"
+    koinCore = "io.insert-koin:koin-core:${koin_version}"
+    composeKoin = "io.insert-koin:koin-androidx-compose:${composeKoin_version}"
 }

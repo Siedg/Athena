@@ -76,4 +76,7 @@ dependencies {
     implementation composeLifecycle
     implementation navigation
     implementation kotlinCoroutines
+    implementation koin
+    implementation koinCore
+    implementation composeKoin
 }

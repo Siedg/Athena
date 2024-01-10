@@ -2,7 +2,13 @@ package br.com.athena.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.AppBarDefaults
 import androidx.compose.material.Icon
 import androidx.compose.material.TopAppBar
@@ -37,6 +43,7 @@ fun AthenaTopBar(
     secondIconOnPressClick: () -> Unit = {},
     backgroundColor: Color? = null,
     elevation: Dp = AppBarDefaults.TopAppBarElevation,
+    hasNavigationDrawer: Boolean? = false
 ) {
     TopAppBar(
         backgroundColor = backgroundColor ?: Color.White,
