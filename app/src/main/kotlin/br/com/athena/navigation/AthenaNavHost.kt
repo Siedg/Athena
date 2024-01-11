@@ -19,6 +19,7 @@ import br.com.athena.home.presentation.ui.HomeScreen
 import br.com.athena.login.presentation.ui.GoogleAuthUIClient
 import br.com.athena.login.presentation.ui.LoginScreen
 import br.com.athena.login.presentation.viewmodel.LoginViewModel
+import com.google.android.gms.auth.api.identity.Identity
 import kotlinx.coroutines.launch
 
 @Composable
@@ -30,7 +31,7 @@ fun AthenaNavHost(
     val googleAuthUIClient by lazy {
         GoogleAuthUIClient(
             context = context,
-            oneTapClient = com.google.android.gms.auth.api.identity.Identity.getSignInClient(context)
+            oneTapClient = Identity.getSignInClient(context)
         )
     }
 
