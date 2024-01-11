@@ -7,11 +7,14 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import br.com.athena.R
+import br.com.athena.theme.Dimensions.dimen_12sp
+import br.com.athena.theme.Dimensions.dimen_14sp
 import br.com.athena.theme.Dimensions.dimen_16sp
 import br.com.athena.theme.Dimensions.dimen_18sp
 import br.com.athena.theme.Dimensions.dimen_20sp
 import br.com.athena.theme.Dimensions.dimen_22sp
 import br.com.athena.theme.Dimensions.dimen_24sp
+import br.com.athena.theme.Dimensions.dimen_26sp
 
 @Composable
 fun AppTheme(
@@ -19,12 +22,18 @@ fun AppTheme(
 ) {
     val appColors = AppColors(
         colorPrimary = colorResource(id = R.color.colorPrimary),
+        colorPrimaryLight = colorResource(id = R.color.colorPrimaryLight),
+        colorPrimaryExtraLight = colorResource(id = R.color.colorPrimaryExtraLight),
+        colorPrimaryDark = colorResource(id = R.color.colorPrimaryDark),
         colorPrimaryVariant = colorResource(id = R.color.colorPrimaryVariant),
         colorSecondary = colorResource(id = R.color.colorSecondary),
         colorSecondaryVariant = colorResource(id = R.color.colorSecondaryVariant),
         colorWhite = Color.White,
         colorGray = Color(0xFF888888),
-        colorBlack = Color.Black
+        colorBlack = Color.Black,
+        colorMediumGray = colorResource(id = R.color.colorMediumGray),
+        colorDarkGray = colorResource(id = R.color.colorDarkGray),
+        colorInputError = colorResource(id = R.color.colorInputError)
     )
 
     val athenaTypography = AppTypography(
@@ -32,6 +41,30 @@ fun AppTheme(
             fontWeight = FontWeight.Bold,
             fontSize = dimen_24sp,
             lineHeight = dimen_24sp,
+            fontFamily = fonts
+        ),
+        text_12_bold = TextStyle(
+            fontWeight = FontWeight.Bold,
+            fontSize = dimen_12sp,
+            lineHeight = dimen_14sp,
+            fontFamily = fonts
+        ),
+        text_12_normal = TextStyle(
+            fontWeight = FontWeight.Normal,
+            fontSize = dimen_12sp,
+            lineHeight = dimen_14sp,
+            fontFamily = fonts
+        ),
+        text_14_bold = TextStyle(
+            fontWeight = FontWeight.Bold,
+            fontSize = dimen_14sp,
+            lineHeight = dimen_16sp,
+            fontFamily = fonts
+        ),
+        text_14_normal = TextStyle(
+            fontWeight = FontWeight.Normal,
+            fontSize = dimen_14sp,
+            lineHeight = dimen_16sp,
             fontFamily = fonts
         ),
         text_16_bold = TextStyle(
@@ -68,6 +101,18 @@ fun AppTheme(
             fontWeight = FontWeight.Normal,
             fontSize = dimen_20sp,
             lineHeight = dimen_22sp,
+            fontFamily = fonts
+        ),
+        text_24_normal = TextStyle(
+            fontWeight = FontWeight.Normal,
+            fontSize = dimen_24sp,
+            lineHeight = dimen_26sp,
+            fontFamily = fonts
+        ),
+        text_24_bold = TextStyle(
+            fontWeight = FontWeight.Normal,
+            fontSize = dimen_24sp,
+            lineHeight = dimen_26sp,
             fontFamily = fonts
         )
     )

@@ -10,23 +10,35 @@ import br.com.athena.R
 @Immutable
 data class AppTypography (
     val topBarTitle: TextStyle,
+    val text_12_bold: TextStyle,
+    val text_12_normal: TextStyle,
+    val text_14_bold: TextStyle,
+    val text_14_normal: TextStyle,
     val text_16_bold: TextStyle,
     val text_16_normal: TextStyle,
     val text_18_bold: TextStyle,
     val text_18_normal: TextStyle,
     val text_20_bold: TextStyle,
-    val text_20_normal: TextStyle
+    val text_20_normal: TextStyle,
+    val text_24_bold: TextStyle,
+    val text_24_normal: TextStyle
 )
 
 val LocalAthenaTypography = staticCompositionLocalOf {
     AppTypography(
         topBarTitle = TextStyle.Default,
+        text_12_bold = TextStyle.Default,
+        text_12_normal = TextStyle.Default,
+        text_14_bold = TextStyle.Default,
+        text_14_normal = TextStyle.Default,
         text_16_bold = TextStyle.Default,
         text_16_normal = TextStyle.Default,
         text_18_normal = TextStyle.Default,
         text_18_bold = TextStyle.Default,
         text_20_normal = TextStyle.Default,
-        text_20_bold = TextStyle.Default
+        text_20_bold = TextStyle.Default,
+        text_24_normal = TextStyle.Default,
+        text_24_bold = TextStyle.Default
 
     )
 }
