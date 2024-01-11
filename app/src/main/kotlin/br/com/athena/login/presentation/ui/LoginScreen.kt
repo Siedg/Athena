@@ -1,5 +1,6 @@
 package br.com.athena.login.presentation.ui
 
+import android.content.Context
 import android.widget.Toast
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,33 +16,16 @@ import androidx.compose.ui.platform.LocalContext
 
 @Composable
 fun LoginScreen(
-    state: SignInState,
-    onSignInClick: () -> Unit
+    context: Context,
 ) {
-    val context = LocalContext.current
-
-    LaunchedEffect(key1 = state.signInError) {
-        state.signInError?.let { error ->
-            Toast.makeText(
-                context,
-                error,
-                Toast.LENGTH_LONG
-            ).show()
-        }
-    }
-
-    Scaffold {
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(it),
-            contentAlignment = Alignment.Center
-        ) {
-//            LoginContent()
-            Button(onClick = onSignInClick) {
-                Text("Sign in")
+    Scaffold(
+        content = {
+            Box(
+                modifier = Modifier
+                    .padding(it),
+            ) {
+                LoginContent(context = context)
             }
-
         }
-    }
+    )
 }

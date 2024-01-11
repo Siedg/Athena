@@ -40,46 +40,7 @@ fun AthenaNavHost(
             HomeScreen(navController = navController)
         }
         composable(route = SIGN_IN) {
-            val viewModel = viewModel<LoginViewModel>()
-            val state by viewModel.state.collectAsState()
-
-            val launcher = rememberLauncherForActivityResult(
-                contract = ActivityResultContracts.StartIntentSenderForResult(),
-                onResult = { result ->
-                    if (result.resultCode == RESULT_OK) {
-                        scope.launch {
-                            val signInResult = googleAuthUIClient.signInWithIntent(
-                                intent = result.data ?: return@launch
-                            )
-                            viewModel.onSignInResult(signInResult)
-                        }
-                    }
-                }
-            )
-
-            LaunchedEffect(key1 = state.isSignInSuccessful) {
-                if (state.isSignInSuccessful) {
-                    Toast.makeText(
-                        context,
-                        "Sign in successful",
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
-            }
-
-            LoginScreen(
-                state = state,
-                onSignInClick = {
-                    scope.launch {
-                        val signInIntentSender = googleAuthUIClient.signIn()
-                        launcher.launch(
-                            IntentSenderRequest.Builder(
-                                signInIntentSender ?: return@launch
-                            ).build()
-                        )
-                    }
-                }
-            )
+            LoginScreen(context = context)
         }
     }
 }

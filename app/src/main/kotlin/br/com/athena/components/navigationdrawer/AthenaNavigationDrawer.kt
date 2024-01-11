@@ -64,7 +64,8 @@ private fun AthenaDrawerHeader() {
                         color = AppTheme.colors.colorPrimary,
                         shape = CircleShape
                     ),
-                painter = painterResource(id = R.drawable.male_placeholder_image),
+                painter = painterResource(id = R.drawable.ic_menu),
+//                painter = painterResource(id = R.drawable.male_placeholder_image),
                 contentDescription = null
             )
             AthenaText_16Bold(

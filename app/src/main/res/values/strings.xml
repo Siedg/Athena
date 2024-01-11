@@ -12,4 +12,16 @@
 
 
     <string name="web_client_id">446890022231-fr2j8613gihp0ttldaogkncrsru45gtm.apps.googleusercontent.com</string>
+
+
+    <!-- Login -->
+    <string name="login_title">Login</string>
+    <string name="login_button">Entrar</string>
+
+    <!-- Labels -->
+    <string name="email_label">E-mail</string>
+    <string name="password_label">Senha</string>
+    <string name="show_password_label">Mostrar</string>
+    <string name="hide_password_label">Ocultar</string>
+
 </resources>
