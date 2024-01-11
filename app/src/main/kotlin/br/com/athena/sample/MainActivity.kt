@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
 
         setContent {
             AppTheme {
-                AthenaNavHost()
+                AthenaNavHost(context = applicationContext)
             }
         }
     }

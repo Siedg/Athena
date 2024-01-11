@@ -14,6 +14,7 @@ ext {
     composeUITooling_version = "1.0.1"
     composeLifecycle_version = "2.3.1"
     compose_version = "1.5.4"
+    composeCoil_version = "2.2.2"
     nav_version = "2.6.0"
 
     // Koin
@@ -29,6 +30,7 @@ ext {
     firebasePerformance_version = "32.7.0"
     firebaseDynamicLink_version = "32.7.0"
     firebaseBoM_version = "32.7.0"
+    firebaseAuthenticationKtx_version = "22.3.0"
     firebaseAuthentication_version = "32.7.0"
 
 
@@ -43,6 +45,7 @@ ext {
     composeUITooling = "androidx.compose.ui:ui-tooling-preview:${composeUITooling_version}"
     composeLifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:${composeLifecycle_version}"
     compose = "androidx.activity:activity-compose:${compose_version}"
+    composeCoil = "io.coil-kt:coil-compose:${composeCoil_version}"
     navigation = "androidx.navigation:navigation-compose:${nav_version}"
     kotlinCoroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${kotlin_coroutines_version}"
 
@@ -52,12 +55,13 @@ ext {
     composeKoin = "io.insert-koin:koin-androidx-compose:${composeKoin_version}"
 
     // Firebase
-    firebaseBoM = "com.google.firebase:firebase-bom${firebaseBoM_version}"
-    firebaseRemoteConfig = "com.google.firebase:firebase-config${firebaseRemoteConfig_version}"
-    firebaseCrashlytics = "com.google.firebase:firebase-crashlytics${firebaseCrashlytics_version}"
-    firebaseMessaging = "com.google.firebase:firebase-messaging-ktx${firebaseMessaging_version}"
-    firebaseDatabase = "com.google.firebase:firebase-database${firebaseDatabase_version}"
-    firebasePerformance = "com.google.firebase:firebase-perf${firebasePerformance_version}"
-    firebaseDynamicLink = "com.google.firebase:firebase-dynamic-links-ktx${firebaseDynamicLink_version}"
-    firebaseAuthentication = "com.google.firebase:firebase-auth-ktx${firebaseAuthentication_version}"
+    firebaseBoM = "com.google.firebase:firebase-bom:${firebaseBoM_version}"
+    firebaseRemoteConfig = "com.google.firebase:firebase-config:${firebaseRemoteConfig_version}"
+    firebaseCrashlytics = "com.google.firebase:firebase-crashlytics:${firebaseCrashlytics_version}"
+    firebaseMessaging = "com.google.firebase:firebase-messaging-ktx:${firebaseMessaging_version}"
+    firebaseDatabase = "com.google.firebase:firebase-database:${firebaseDatabase_version}"
+    firebasePerformance = "com.google.firebase:firebase-perf:${firebasePerformance_version}"
+    firebaseDynamicLink = "com.google.firebase:firebase-dynamic-links-ktx:${firebaseDynamicLink_version}"
+    firebaseAuthenticationKtx = "com.google.firebase:firebase-auth-ktx:${firebaseAuthenticationKtx_version}"
+    firebaseAuthentication = "com.google.firebase:firebase-auth:${firebaseAuthentication_version}"
 }

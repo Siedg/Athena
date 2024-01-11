@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "446890022231",
+    "firebase_url": "https://athena-9b18b-default-rtdb.firebaseio.com",
     "project_id": "athena-9b18b",
     "storage_bucket": "athena-9b18b.appspot.com"
   },
@@ -12,7 +13,20 @@
           "package_name": "br.com.athena"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "446890022231-vcdhsec10n1ha59f1fv4uhvsfhi227gk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.athena",
+            "certificate_hash": "2a9ae4bdd8ddbbff37baa8979cf6289b90ed9c24"
+          }
+        },
+        {
+          "client_id": "446890022231-fr2j8613gihp0ttldaogkncrsru45gtm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBZxXNfAAj9hL1yxZzb1IoU1WWqt2lHDpY"
@@ -20,7 +34,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "446890022231-fr2j8613gihp0ttldaogkncrsru45gtm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
