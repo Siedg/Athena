@@ -11,4 +11,8 @@ object HawkSession {
     fun isUserLoggedIn(): Boolean = Hawk.contains(USER_DATA)
 
     fun onUserSignOut(): Boolean = Hawk.delete(USER_DATA)
+
+    fun getSignInMethod(): String = Hawk.get(SIGN_IN_METHOD, "")
+
+    fun saveSignInMethod(signInMethod: String) = Hawk.put(SIGN_IN_METHOD, signInMethod)
 }

@@ -9,6 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import br.com.athena.hawk.HawkSession
 import br.com.athena.home.presentation.ui.HomeScreen
+import br.com.athena.login.components.SignInMethod
 import br.com.athena.login.presentation.ui.LoginScreen
 import br.com.athena.navigation.Routes.HOME
 import br.com.athena.navigation.Routes.SIGN_IN
@@ -29,6 +30,7 @@ fun AthenaNavHost(
         ) {
             LaunchedEffect(key1 = Unit) {
                 if (HawkSession.isUserLoggedIn()) {
+                    HawkSession.saveSignInMethod(SignInMethod.GOOGLE)
                     navController.navigate(HOME)
                 }
             }

@@ -5,6 +5,7 @@ import android.content.Context
 import android.util.Patterns
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -109,7 +110,7 @@ fun LoginContent(
     }
     
     LaunchedEffect(key1 = signOut) {
-        viewModel.signOut(googleAuthUIClient)
+        viewModel.signOut(signInWithGoogleAuthUIClient = googleAuthUIClient)
     }
 
     Column(
@@ -147,21 +148,28 @@ fun LoginContent(
             shape = RoundedCornerShape(dimen_64dp),
             text = stringResource(id = R.string.login_button)
         ) {
+            /*
             viewModel.signIn(
                 signInMethod = SignInMethod.EMAIL,
                 email = emailState.text,
                 password = passwordState.text
             )
-            /*
-            scope.launch {
-                val signInIntentSender = googleAuthUIClient.signIn()
-                launcher.launch(
-                    IntentSenderRequest.Builder(
-                        signInIntentSender ?: return@launch
-                    ).build()
-                )
-            }
+
              */
+
+            viewModel.signIn(
+                signInMethod = SignInMethod.GOOGLE,
+                signIn = {
+                    scope.launch {
+                        val signInIntentSender = googleAuthUIClient.signIn()
+                        launcher.launch(
+                            IntentSenderRequest.Builder(
+                                signInIntentSender ?: return@launch
+                            ).build()
+                        )
+                    }
+                }
+            )
         }
     }
 }
