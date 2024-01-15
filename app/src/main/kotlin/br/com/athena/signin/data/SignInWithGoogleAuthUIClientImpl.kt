@@ -1,11 +1,11 @@
-package br.com.athena.login.data
+package br.com.athena.signin.data
 
 import android.content.Context
 import android.content.Intent
 import android.content.IntentSender
 import br.com.athena.R
-import br.com.athena.login.presentation.ui.SignInResult
-import br.com.athena.login.presentation.ui.UserData
+import br.com.athena.signin.presentation.ui.SignInResult
+import br.com.athena.signin.presentation.ui.UserData
 import com.google.android.gms.auth.api.identity.BeginSignInRequest
 import com.google.android.gms.auth.api.identity.BeginSignInRequest.GoogleIdTokenRequestOptions
 import com.google.android.gms.auth.api.identity.SignInClient
@@ -15,10 +15,10 @@ import com.google.firebase.auth.auth
 import kotlinx.coroutines.tasks.await
 import java.util.concurrent.CancellationException
 
-class GoogleAuthUIClientImpl(
+class SignInWithGoogleAuthUIClientImpl(
     private val context: Context,
     private val oneTapClient: SignInClient
-) : GoogleAuthUIClient {
+) : SignInWithGoogleAuthUIClient {
     private val auth = Firebase.auth
 
     override suspend fun signIn(): IntentSender? {

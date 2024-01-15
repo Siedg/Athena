@@ -1,18 +1,20 @@
-package br.com.athena.login.presentation.viewmodel
+package br.com.athena.signin.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.athena.hawk.HawkSession
-import br.com.athena.login.data.GoogleAuthUIClient
-import br.com.athena.login.presentation.ui.SignInResult
-import br.com.athena.login.presentation.ui.SignInState
-import br.com.athena.login.presentation.ui.UserData
+import br.com.athena.signin.data.SignInWithEmail
+import br.com.athena.signin.data.SignInWithGoogleAuthUIClient
+import br.com.athena.signin.presentation.ui.SignInResult
+import br.com.athena.signin.presentation.ui.SignInState
+import br.com.athena.signin.presentation.ui.UserData
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class LoginViewModel(
+    private val signInWithEmail: SignInWithEmail
 ) : ViewModel() {
     private val _state = MutableStateFlow(SignInState())
     val state = _state.asStateFlow()
@@ -27,6 +29,15 @@ class LoginViewModel(
         }
     }
 
+    fun signInWithEmail(email: String, password: String) {
+        signInWithEmail.signIn(
+            email = email,
+            password = password,
+            success = {  },
+            error = {  }
+        )
+    }
+
     fun resetState() {
         _state.update { SignInState() }
     }
@@ -35,9 +46,9 @@ class LoginViewModel(
         HawkSession.saveUserData(userData)
     }
 
-    fun signOut(googleAuthUIClient: GoogleAuthUIClient) {
+    fun signOut(signInWithGoogleAuthUIClient: SignInWithGoogleAuthUIClient) {
         viewModelScope.launch {
-            googleAuthUIClient.signOut()
+            signInWithGoogleAuthUIClient.signOut()
             HawkSession.onUserSignOut()
         }
     }

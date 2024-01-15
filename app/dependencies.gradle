@@ -25,6 +25,9 @@ ext {
     // Hawk
     hawk_version = "2.0.1"
 
+    // Timber
+    timber_version = "4.5.1"
+
     // Firebase
     firebaseRemoteConfig_version = "32.7.0"
     firebaseCrashlytics_version = "32.7.0"
@@ -59,6 +62,9 @@ ext {
 
     // Hawk
     hawk = "com.orhanobut:hawk:${hawk_version}"
+
+    // Timber
+    timber = "com.jakewharton.timber:timber:${timber_version}"
 
     // Firebase
     firebaseBoM = "com.google.firebase:firebase-bom:${firebaseBoM_version}"

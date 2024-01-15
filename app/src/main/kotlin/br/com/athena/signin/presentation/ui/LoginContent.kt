@@ -1,11 +1,10 @@
-package br.com.athena.login.presentation.ui
+package br.com.athena.signin.presentation.ui
 
 import android.app.Activity
 import android.content.Context
 import android.util.Patterns
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
-import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -31,9 +30,9 @@ import br.com.athena.components.texts.AthenaEmailInputText
 import br.com.athena.components.texts.AthenaPasswordInputText
 import br.com.athena.components.texts.AthenaText_24Bold
 import br.com.athena.components.texts.rememberErrorTextFieldState
-import br.com.athena.login.data.GoogleAuthUIClientImpl
-import br.com.athena.login.presentation.viewmodel.LoginViewModel
 import br.com.athena.navigation.HOME
+import br.com.athena.signin.data.SignInWithGoogleAuthUIClientImpl
+import br.com.athena.signin.presentation.viewmodel.LoginViewModel
 import br.com.athena.theme.Dimensions.dimen_16dp
 import br.com.athena.theme.Dimensions.dimen_32dp
 import br.com.athena.theme.Dimensions.dimen_64dp
@@ -54,7 +53,7 @@ fun LoginContent(
     val scope = rememberCoroutineScope()
 
     val googleAuthUIClient by lazy {
-        GoogleAuthUIClientImpl(
+        SignInWithGoogleAuthUIClientImpl(
             context = context,
             oneTapClient = Identity.getSignInClient(context)
         )
@@ -147,6 +146,8 @@ fun LoginContent(
             shape = RoundedCornerShape(dimen_64dp),
             text = stringResource(id = R.string.login_button)
         ) {
+            viewModel.signInWithEmail(emailState.text, passwordState.text)
+            /*
             scope.launch {
                 val signInIntentSender = googleAuthUIClient.signIn()
                 launcher.launch(
@@ -155,6 +156,7 @@ fun LoginContent(
                     ).build()
                 )
             }
+             */
         }
     }
 }

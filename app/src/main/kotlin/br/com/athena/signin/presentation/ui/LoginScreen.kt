@@ -1,4 +1,4 @@
-package br.com.athena.login.presentation.ui
+package br.com.athena.signin.presentation.ui
 
 import android.content.Context
 import androidx.compose.foundation.layout.Box

@@ -87,4 +87,5 @@ dependencies {
     implementation firebaseBoM
     implementation firebaseAuthenticationKtx
     implementation playServicesAuthentication
+    implementation timber
 }

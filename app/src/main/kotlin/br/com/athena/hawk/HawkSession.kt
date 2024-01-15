@@ -1,6 +1,6 @@
 package br.com.athena.hawk
 
-import br.com.athena.login.presentation.ui.UserData
+import br.com.athena.signin.presentation.ui.UserData
 import com.orhanobut.hawk.Hawk
 
 object HawkSession {

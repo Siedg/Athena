@@ -2,7 +2,7 @@ package br.com.athena.sample
 
 import android.app.Application
 import br.com.athena.home.di.AthenaHomeModule
-import br.com.athena.login.di.AthenaLoginModule
+import br.com.athena.signin.di.AthenaLoginModule
 import com.orhanobut.hawk.Hawk
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
