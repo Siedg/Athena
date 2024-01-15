@@ -20,16 +20,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.res.painterResource
-import br.com.athena.R
 import br.com.athena.components.texts.AthenaText_16Bold
 import br.com.athena.components.texts.AthenaText_16Normal
+import br.com.athena.hawk.HawkSession
 import br.com.athena.theme.AppTheme
 import br.com.athena.theme.Dimensions.dimen_16dp
 import br.com.athena.theme.Dimensions.dimen_24dp
 import br.com.athena.theme.Dimensions.dimen_2dp
 import br.com.athena.theme.Dimensions.dimen_64dp
 import br.com.athena.theme.Dimensions.dimen_8dp
+import coil.compose.rememberAsyncImagePainter
 
 @Composable
 fun AthenaNavigationDrawer(
@@ -45,6 +45,7 @@ fun AthenaNavigationDrawer(
 
 @Composable
 private fun AthenaDrawerHeader() {
+    val user = HawkSession.getUserData()
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -64,18 +65,21 @@ private fun AthenaDrawerHeader() {
                         color = AppTheme.colors.colorPrimary,
                         shape = CircleShape
                     ),
-                painter = painterResource(id = R.drawable.ic_menu),
-//                painter = painterResource(id = R.drawable.male_placeholder_image),
+                painter = rememberAsyncImagePainter(model = user.profilePictureUrl),
                 contentDescription = null
             )
-            AthenaText_16Bold(
-                modifier = Modifier.padding(top = dimen_24dp),
-                text = "Lorem ipsum dolor"
-            )
-            AthenaText_16Bold(
-                modifier = Modifier.padding(top = dimen_8dp),
-                text = "lorem.ipsum@dolor.com"
-            )
+            user.username?.let {
+                AthenaText_16Bold(
+                    modifier = Modifier.padding(top = dimen_24dp),
+                    text = it
+                )
+            }
+            user.email?.let {
+                AthenaText_16Bold(
+                    modifier = Modifier.padding(top = dimen_8dp),
+                    text = it
+                )
+            }
         }
     }
 }
@@ -115,4 +119,5 @@ private val defaultScreens = listOf(
     AthenaNavigationDrawerItem.Home,
     AthenaNavigationDrawerItem.Settings,
     AthenaNavigationDrawerItem.Help,
+    AthenaNavigationDrawerItem.SignOut,
 )

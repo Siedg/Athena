@@ -1,9 +1,11 @@
-package br.com.athena.login.presentation.ui
+package br.com.athena.login.data
 
 import android.content.Context
 import android.content.Intent
 import android.content.IntentSender
 import br.com.athena.R
+import br.com.athena.login.presentation.ui.SignInResult
+import br.com.athena.login.presentation.ui.UserData
 import com.google.android.gms.auth.api.identity.BeginSignInRequest
 import com.google.android.gms.auth.api.identity.BeginSignInRequest.GoogleIdTokenRequestOptions
 import com.google.android.gms.auth.api.identity.SignInClient
@@ -13,13 +15,13 @@ import com.google.firebase.auth.auth
 import kotlinx.coroutines.tasks.await
 import java.util.concurrent.CancellationException
 
-class GoogleAuthUIClient(
+class GoogleAuthUIClientImpl(
     private val context: Context,
     private val oneTapClient: SignInClient
-) {
+) : GoogleAuthUIClient {
     private val auth = Firebase.auth
 
-    suspend fun signIn(): IntentSender? {
+    override suspend fun signIn(): IntentSender? {
         val result = try {
             oneTapClient.beginSignIn(
                 buildSignInRequest()
@@ -32,7 +34,7 @@ class GoogleAuthUIClient(
         return result?.pendingIntent?.intentSender
     }
 
-    suspend fun signInWithIntent(intent: Intent): SignInResult {
+    override suspend fun signInWithIntent(intent: Intent): SignInResult {
         val credential = oneTapClient.getSignInCredentialFromIntent(intent)
         val googleIdToken = credential.googleIdToken
         val googleCredentials = GoogleAuthProvider.getCredential(googleIdToken, null)
@@ -44,7 +46,9 @@ class GoogleAuthUIClient(
                     UserData(
                         userId = uid,
                         username = displayName,
-                        profilePictureUrl = photoUrl?.toString()
+                        profilePictureUrl = photoUrl?.toString(),
+                        email = user.email,
+                        phoneNumber = user.phoneNumber
                     )
                 },
                 errorMessage = null
@@ -61,7 +65,7 @@ class GoogleAuthUIClient(
         }
     }
 
-    suspend fun signOut() {
+    override suspend fun signOut() {
         try {
             oneTapClient.signOut().await()
             auth.signOut()
@@ -71,7 +75,7 @@ class GoogleAuthUIClient(
         }
     }
 
-    fun getSignInUser(): UserData? = auth.currentUser?.run {
+    override suspend fun getSignInUser(): UserData? = auth.currentUser?.run {
         UserData(
             userId = uid,
             username = displayName,

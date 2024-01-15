@@ -1,6 +1,7 @@
 package br.com.athena.components.navigationdrawer
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Settings
@@ -9,6 +10,7 @@ import br.com.athena.R
 import br.com.athena.navigation.HELP
 import br.com.athena.navigation.HOME
 import br.com.athena.navigation.SETTINGS
+import br.com.athena.navigation.SIGN_OUT
 
 sealed class AthenaNavigationDrawerItem(
     val title: String,
@@ -31,6 +33,11 @@ sealed class AthenaNavigationDrawerItem(
         title = "Help",
         route = HELP,
         icon = Icons.Default.Info
+    )
+    object SignOut: AthenaNavigationDrawerItem(
+        title = "SignOut",
+        route = SIGN_OUT,
+        icon = Icons.Default.ExitToApp
     )
 }
 

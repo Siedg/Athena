@@ -17,11 +17,12 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import br.com.athena.components.bottombar.AthenaBottomBar
-import br.com.athena.components.topbar.AthenaTopBar
 import br.com.athena.components.bottombar.BottomNavigationItem
 import br.com.athena.components.navigationdrawer.AthenaNavigationDrawer
+import br.com.athena.components.topbar.AthenaTopBar
 import br.com.athena.home.presentation.viewmodel.HomeViewModel
 import br.com.athena.navigation.HOME
+import br.com.athena.navigation.SIGN_OUT
 import kotlinx.coroutines.launch
 import org.koin.androidx.compose.koinViewModel
 
@@ -74,6 +75,7 @@ fun HomeScreen(
                 onItemClick = {
                     when(it.route) {
                         HOME -> {}
+                        SIGN_OUT -> { navController.navigate(SIGN_OUT) }
                     }
                 }
             )

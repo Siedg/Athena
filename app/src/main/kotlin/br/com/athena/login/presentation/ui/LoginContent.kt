@@ -4,9 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.util.Patterns
 import android.widget.Toast
-import androidx.activity.compose.ManagedActivityResultLauncher
 import androidx.activity.compose.rememberLauncherForActivityResult
-import androidx.activity.result.ActivityResult
 import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Column
@@ -14,8 +12,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Button
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -28,15 +24,16 @@ import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
+import androidx.navigation.NavController
 import br.com.athena.R
 import br.com.athena.components.buttons.AthenaRoundedButton
 import br.com.athena.components.texts.AthenaEmailInputText
-import br.com.athena.components.texts.AthenaInputText
 import br.com.athena.components.texts.AthenaPasswordInputText
 import br.com.athena.components.texts.AthenaText_24Bold
 import br.com.athena.components.texts.rememberErrorTextFieldState
-import br.com.athena.home.presentation.viewmodel.HomeViewModel
+import br.com.athena.login.data.GoogleAuthUIClientImpl
 import br.com.athena.login.presentation.viewmodel.LoginViewModel
+import br.com.athena.navigation.HOME
 import br.com.athena.theme.Dimensions.dimen_16dp
 import br.com.athena.theme.Dimensions.dimen_32dp
 import br.com.athena.theme.Dimensions.dimen_64dp
@@ -47,14 +44,17 @@ import org.koin.androidx.compose.koinViewModel
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun LoginContent(
-    context: Context
+    context: Context,
+    navController: NavController,
+    signOut: Boolean
 ) {
     val viewModel: LoginViewModel = koinViewModel()
     val state by viewModel.state.collectAsState()
     val keyboardController = LocalSoftwareKeyboardController.current
     val scope = rememberCoroutineScope()
+
     val googleAuthUIClient by lazy {
-        GoogleAuthUIClient(
+        GoogleAuthUIClientImpl(
             context = context,
             oneTapClient = Identity.getSignInClient(context)
         )
@@ -103,12 +103,13 @@ fun LoginContent(
 
     LaunchedEffect(key1 = state.isSignInSuccessful) {
         if (state.isSignInSuccessful) {
-            Toast.makeText(
-                context,
-                "Sign in successful",
-                Toast.LENGTH_LONG
-            ).show()
+            navController.navigate(HOME)
+            viewModel.resetState()
         }
+    }
+    
+    LaunchedEffect(key1 = signOut) {
+        viewModel.signOut(googleAuthUIClient)
     }
 
     Column(

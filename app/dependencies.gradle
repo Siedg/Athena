@@ -22,6 +22,9 @@ ext {
     koinAndroid_version = "3.3.3"
     composeKoin_version = "3.4.2"
 
+    // Hawk
+    hawk_version = "2.0.1"
+
     // Firebase
     firebaseRemoteConfig_version = "32.7.0"
     firebaseCrashlytics_version = "32.7.0"
@@ -53,6 +56,9 @@ ext {
     koin = "io.insert-koin:koin-android:${koin_version}"
     koinCore = "io.insert-koin:koin-core:${koin_version}"
     composeKoin = "io.insert-koin:koin-androidx-compose:${composeKoin_version}"
+
+    // Hawk
+    hawk = "com.orhanobut:hawk:${hawk_version}"
 
     // Firebase
     firebaseBoM = "com.google.firebase:firebase-bom:${firebaseBoM_version}"

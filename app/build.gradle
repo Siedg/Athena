@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
+    id 'kotlin-kapt'
 }
 
 apply from: 'dependencies.gradle'
@@ -28,7 +29,7 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -76,10 +77,12 @@ dependencies {
     implementation composeMaterial
     implementation composeUITooling
     implementation composeLifecycle
+    implementation composeCoil
     implementation navigation
     implementation kotlinCoroutines
     implementation koin
     implementation koinCore
+    implementation hawk
     implementation composeKoin
     implementation firebaseBoM
     implementation firebaseAuthenticationKtx
