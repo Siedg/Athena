@@ -17,6 +17,7 @@
     <!-- Login -->
     <string name="login_title">Login</string>
     <string name="login_button">Entrar</string>
+    <string name="login_with_google">Fazer login com uma conta google</string>
 
     <!-- Labels -->
     <string name="email_label">E-mail</string>

@@ -64,12 +64,14 @@ class LoginViewModel(
         signInMethod: String,
         email: String? = null,
         password: String? = null,
-        signIn: () -> (Unit)
+        signIn: (() -> (Unit))? = null
     ) {
         HawkSession.saveSignInMethod(signInMethod)
         when(signInMethod) {
             SignInMethod.GOOGLE -> {
-                signIn()
+                if (signIn != null) {
+                    signIn()
+                }
             }
 
             SignInMethod.EMAIL -> {
