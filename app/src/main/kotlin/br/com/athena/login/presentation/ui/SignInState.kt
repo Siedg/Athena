@@ -1,4 +1,4 @@
-package br.com.athena.signin.presentation.ui
+package br.com.athena.login.presentation.ui
 
 data class SignInState(
     val isSignInSuccessful: Boolean = false,

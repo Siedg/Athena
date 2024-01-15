@@ -21,7 +21,7 @@ import br.com.athena.components.bottombar.BottomNavigationItem
 import br.com.athena.components.navigationdrawer.AthenaNavigationDrawer
 import br.com.athena.components.topbar.AthenaTopBar
 import br.com.athena.home.presentation.viewmodel.HomeViewModel
-import br.com.athena.navigation.SIGN_OUT
+import br.com.athena.navigation.Routes.SIGN_OUT
 import kotlinx.coroutines.launch
 import org.koin.androidx.compose.koinViewModel
 

@@ -1,4 +1,4 @@
-package br.com.athena.signin.data
+package br.com.athena.login.data
 
 import com.google.firebase.auth.FirebaseUser
 

@@ -1,4 +1,4 @@
-package br.com.athena.signin.presentation.ui
+package br.com.athena.login.presentation.ui
 
 import android.app.Activity
 import android.content.Context
@@ -30,9 +30,10 @@ import br.com.athena.components.texts.AthenaEmailInputText
 import br.com.athena.components.texts.AthenaPasswordInputText
 import br.com.athena.components.texts.AthenaText_24Bold
 import br.com.athena.components.texts.rememberErrorTextFieldState
-import br.com.athena.navigation.HOME
-import br.com.athena.signin.data.SignInWithGoogleAuthUIClientImpl
-import br.com.athena.signin.presentation.viewmodel.LoginViewModel
+import br.com.athena.login.components.SignInMethod
+import br.com.athena.login.data.SignInWithGoogleAuthUIClientImpl
+import br.com.athena.login.presentation.viewmodel.LoginViewModel
+import br.com.athena.navigation.Routes.HOME
 import br.com.athena.theme.Dimensions.dimen_16dp
 import br.com.athena.theme.Dimensions.dimen_32dp
 import br.com.athena.theme.Dimensions.dimen_64dp
@@ -146,7 +147,11 @@ fun LoginContent(
             shape = RoundedCornerShape(dimen_64dp),
             text = stringResource(id = R.string.login_button)
         ) {
-            viewModel.signInWithEmail(emailState.text, passwordState.text)
+            viewModel.signIn(
+                signInMethod = SignInMethod.EMAIL,
+                email = emailState.text,
+                password = passwordState.text
+            )
             /*
             scope.launch {
                 val signInIntentSender = googleAuthUIClient.signIn()

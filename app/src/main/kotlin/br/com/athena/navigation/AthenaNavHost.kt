@@ -9,7 +9,9 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import br.com.athena.hawk.HawkSession
 import br.com.athena.home.presentation.ui.HomeScreen
-import br.com.athena.signin.presentation.ui.LoginScreen
+import br.com.athena.login.presentation.ui.LoginScreen
+import br.com.athena.navigation.Routes.HOME
+import br.com.athena.navigation.Routes.SIGN_IN
 
 @Composable
 fun AthenaNavHost(
@@ -33,7 +35,7 @@ fun AthenaNavHost(
             LoginScreen(
                 context = context,
                 navController = navController,
-                signOut = it.arguments?.getBoolean(SIGN_OUT) ?: false
+                signOut = it.arguments?.getBoolean(Argument.SIGN_OUT) ?: false
             )
         }
     }

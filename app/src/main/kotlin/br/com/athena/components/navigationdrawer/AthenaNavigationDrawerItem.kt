@@ -7,10 +7,10 @@ import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.ui.graphics.vector.ImageVector
 import br.com.athena.R
-import br.com.athena.navigation.HELP
-import br.com.athena.navigation.HOME
-import br.com.athena.navigation.SETTINGS
-import br.com.athena.navigation.SIGN_OUT
+import br.com.athena.navigation.Routes.HELP
+import br.com.athena.navigation.Routes.HOME
+import br.com.athena.navigation.Routes.SETTINGS
+import br.com.athena.navigation.Routes.SIGN_OUT
 
 sealed class AthenaNavigationDrawerItem(
     val title: String,
