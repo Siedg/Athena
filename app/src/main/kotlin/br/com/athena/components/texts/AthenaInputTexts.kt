@@ -33,11 +33,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.SoftwareKeyboardController
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
@@ -47,7 +45,6 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.com.athena.theme.AppTheme
-import br.com.athena.theme.Dimensions.dimen_24dp
 import br.com.athena.theme.Dimensions.dimen_8dp
 
 @Composable
@@ -169,14 +166,14 @@ fun AthenaEmailInputText(
     modifier: Modifier = Modifier,
     emailState: ErrorTextFieldState,
     keyboardController: SoftwareKeyboardController?,
-    loadingState: MutableState<Boolean>
+    loadingState: MutableState<Boolean>,
+    label: String? = null
 ) {
     AthenaInputText(
         modifier = modifier
-            .fillMaxWidth()
-            .padding(horizontal = dimen_24dp),
+            .fillMaxWidth(),
         state = emailState,
-        label = stringResource(br.com.athena.R.string.email_label),
+        label = label ?: stringResource(br.com.athena.R.string.email_label),
         singleLine = true,
         keyboardOptions = KeyboardOptions(
             imeAction = ImeAction.Done,
@@ -196,14 +193,14 @@ fun AthenaPasswordInputText(
     passwordState: ErrorTextFieldState,
     keyboardController: SoftwareKeyboardController?,
     loadingState: MutableState<Boolean>,
-    passwordVisible: MutableState<Boolean>
+    passwordVisible: MutableState<Boolean>,
+    label: String? = null
 ) {
     AthenaInputText(
         modifier = modifier
-            .fillMaxWidth()
-            .padding(horizontal = dimen_24dp),
+            .fillMaxWidth(),
         state = passwordState,
-        label = "Senha",
+        label = label ?: "Senha",
         singleLine = true,
         keyboardOptions = KeyboardOptions(
             imeAction = ImeAction.Done,

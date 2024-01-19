@@ -19,10 +19,21 @@
     <string name="login_button">Entrar</string>
     <string name="login_with_google">Fazer login com uma conta google</string>
 
+    <!-- Register -->
+    <string name="register_title">Cadastro</string>
+    <string name="register_name_label">Nome completo</string>
+    <string name="register_email_label">Email</string>
+    <string name="register_confirm_email_label">Confirme seu email</string>
+    <string name="register_password_label">Senha</string>
+    <string name="register_confirm_password_label">Confirme sua senha</string>
+
     <!-- Labels -->
     <string name="email_label">E-mail</string>
     <string name="password_label">Senha</string>
     <string name="show_password_label">Mostrar</string>
     <string name="hide_password_label">Ocultar</string>
+
+    <!-- Buttons -->
+    <string name="continue_button">Ocultar</string>
 
 </resources>

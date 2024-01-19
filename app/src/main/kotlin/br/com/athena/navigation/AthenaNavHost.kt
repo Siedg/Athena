@@ -11,7 +11,9 @@ import br.com.athena.hawk.HawkSession
 import br.com.athena.home.presentation.ui.HomeScreen
 import br.com.athena.login.presentation.ui.LoginScreen
 import br.com.athena.navigation.Routes.HOME
+import br.com.athena.navigation.Routes.REGISTER
 import br.com.athena.navigation.Routes.SIGN_IN
+import br.com.athena.register.presentation.ui.RegisterScreen
 
 @Composable
 fun AthenaNavHost(
@@ -19,7 +21,7 @@ fun AthenaNavHost(
 ) {
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = SIGN_IN) {
+    NavHost(navController = navController, startDestination = REGISTER) {
         composable(route = HOME) {
             HomeScreen(navController = navController)
         }
@@ -37,6 +39,9 @@ fun AthenaNavHost(
                 navController = navController,
                 signOut = it.arguments?.getBoolean(Argument.SIGN_OUT) ?: false
             )
+        }
+        composable(route = REGISTER) {
+            RegisterScreen(navController = navController)
         }
     }
 }

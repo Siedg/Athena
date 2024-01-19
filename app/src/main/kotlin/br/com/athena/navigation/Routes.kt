@@ -6,4 +6,5 @@ object Routes {
     const val SETTINGS = "settings"
     const val HELP = "help"
     const val SIGN_OUT = "sign_in?signOut={true}"
+    const val REGISTER = "register"
 }
