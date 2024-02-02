@@ -6,7 +6,6 @@ enum class DataType {
     CPF,
     CURRENCY,
     PHONE,
-    MOBILE,
     DATE,
     FULL_NAME,
     LEGAL_AGE,
