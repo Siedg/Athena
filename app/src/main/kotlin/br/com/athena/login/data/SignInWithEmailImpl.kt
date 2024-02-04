@@ -34,7 +34,7 @@ class SignInWithEmailImpl(
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Timber.d("Account created!")
+                    Timber.d("Account created")
                 } else {
                     Timber.e("Error creating account.")
                     error(task.exception)

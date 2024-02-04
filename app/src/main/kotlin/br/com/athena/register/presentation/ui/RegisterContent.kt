@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -91,6 +92,22 @@ fun RegisterContent(
 
     val passwordVisible = rememberSaveable { mutableStateOf(false) }
 
+    val isAllFieldsValid = remember(
+        nameState.text,
+        emailState.text,
+        emailConfirmationState.text,
+        passwordState.text,
+        passwordConfirmationState.text
+    ) {
+        derivedStateOf {
+            nameState.isValid &&
+            emailState.isValid && 
+            emailConfirmationState.isValid &&
+            passwordState.isValid &&
+            passwordConfirmationState.isValid
+        }
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -154,9 +171,10 @@ fun RegisterContent(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(top = dimen_16dp),
+            enabled = isAllFieldsValid.value,
             text = stringResource(id = R.string.continue_button)
         ) {
-
+            //TODO on click register
         }
     }
 }
