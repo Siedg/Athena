@@ -33,7 +33,14 @@ fun RegisterContent(
     val keyboardController = LocalSoftwareKeyboardController.current
     val loadingState = remember { mutableStateOf(false) }
     val nameState = rememberErrorTextFieldState(
-        ""
+        initialText = "",
+        validate = { text ->
+            if (text.isEmpty()) {
+                "O nome deve ser preenchido"
+            } else {
+                null
+            }
+        }
     )
 
     val emailState = rememberErrorTextFieldState(
@@ -59,11 +66,27 @@ fun RegisterContent(
     )
 
     val passwordState = rememberErrorTextFieldState(
-        ""
+        initialText = "",
+        validate = { text ->
+            if (text.isEmpty()) {
+                "Digite uma senha"
+            } else {
+                null
+            }
+        }
     )
 
     val passwordConfirmationState = rememberErrorTextFieldState(
-        ""
+        initialText = "",
+        validate = { text ->
+            if (text.isEmpty()) {
+                "Digite uma senha"
+            } else if (passwordState.text.isNotEmpty() && text != passwordState.text) {
+                "A senha e a confirmação devem ser iguais"
+            } else {
+                null
+            }
+        }
     )
 
     val passwordVisible = rememberSaveable { mutableStateOf(false) }
