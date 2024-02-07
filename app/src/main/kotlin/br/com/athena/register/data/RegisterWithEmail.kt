@@ -1,14 +1,12 @@
-package br.com.athena.login.data
+package br.com.athena.register.data
 
 import com.google.firebase.auth.FirebaseUser
 
-interface SignInWithEmail {
-    fun signIn(
+interface RegisterWithEmail {
+    fun register(
         email: String,
         password: String,
         success: (FirebaseUser?) -> Unit,
         error: (Exception?) -> Unit
     )
-
-    fun signOut()
 }

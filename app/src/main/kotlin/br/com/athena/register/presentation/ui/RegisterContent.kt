@@ -7,7 +7,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -23,14 +26,19 @@ import br.com.athena.components.texts.AthenaInputText
 import br.com.athena.components.texts.AthenaPasswordInputText
 import br.com.athena.components.texts.AthenaText_20Bold
 import br.com.athena.components.texts.rememberErrorTextFieldState
+import br.com.athena.navigation.Routes.SIGN_IN
+import br.com.athena.register.presentation.viewmodel.RegisterViewModel
 import br.com.athena.theme.Dimensions.dimen_16dp
 import br.com.athena.theme.Dimensions.dimen_8dp
+import org.koin.androidx.compose.koinViewModel
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun RegisterContent(
     navController: NavController
 ) {
+    val viewModel: RegisterViewModel = koinViewModel()
+    val state by viewModel.state.collectAsState()
     val keyboardController = LocalSoftwareKeyboardController.current
     val loadingState = remember { mutableStateOf(false) }
     val nameState = rememberErrorTextFieldState(
@@ -108,6 +116,16 @@ fun RegisterContent(
         }
     }
 
+    LaunchedEffect(key1 = state.isRegisterSuccessful) {
+        navController.navigate(SIGN_IN)
+    }
+
+    LaunchedEffect(key1 = state.registerError) {
+        state.registerError?.let {
+
+        }
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -174,7 +192,10 @@ fun RegisterContent(
             enabled = isAllFieldsValid.value,
             text = stringResource(id = R.string.continue_button)
         ) {
-            //TODO on click register
+            viewModel.register(
+                email = emailState.text,
+                password = passwordState.text
+            )
         }
     }
 }
